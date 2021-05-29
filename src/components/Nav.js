@@ -56,7 +56,11 @@ const Nav = () => {
           </li>
         </StyledNavLinks>
       </StyledNav>
-      <StyledNavLine></StyledNavLine>
+      <StyledNavLine
+        transition={{ duration: 1 }}
+        initial={{ width: "0%" }}
+        animate={{ width: "100%" }}
+      ></StyledNavLine>
     </>
   );
 };
