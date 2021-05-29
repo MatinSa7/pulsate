@@ -719,4 +719,25 @@ const Cloud3 = styled.g`
   animation-direction: alternate-reverse;
 `;
 
+const leafthing1Animation = keyframes`
+from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(0);
+  }
+`;
+
+const leafthing1 = styled.g``;
+
+const leafThingOne = styled.g`
+  animation-name: ${leafthing1Animation};
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  transform-origin: bottom;
+  transform-box: fill-box;
+`;
+
 export default IntroPage;
