@@ -621,8 +621,6 @@ const IntroPage = () => {
 const StyledIntroPageContainer = styled(motion.div)`
   position: relative;
   min-height: 84vh;
-  width: 95%;
-  margin-left: 5%;
   display: flex;
   overflow-y: hidden;
 `;
@@ -632,6 +630,7 @@ const StyledDescription = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding-left: 5%;
   padding-bottom: 10rem;
   h2 {
     font-size: 5rem;
@@ -643,7 +642,7 @@ const StyledIntroImages = styled(motion.div)`
   svg {
     position: absolute;
     top: -7%;
-    left: 35%;
+    left: 40%;
     transform: scale(0.85);
   }
 `;
