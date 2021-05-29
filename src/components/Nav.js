@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import meditationlogo from "../icon/meditationlogo.svg";
+import { fade } from "../animation";
 
 const StyledNav = styled(motion.div)`
   display: flex;
@@ -39,7 +40,7 @@ const StyledNavLine = styled(motion.div)`
 const Nav = () => {
   return (
     <>
-      <StyledNav>
+      <StyledNav initial="hidden" animate="show" variants={fade}>
         <StyledLogoContainer id="logo">
           <img src={meditationlogo} alt="" />
           <h1>Pulsate</h1>
