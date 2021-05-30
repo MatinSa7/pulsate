@@ -34,3 +34,14 @@ export const fade = {
     transition: { ease: "easeOut", duration: 1 },
   },
 };
+
+export const SVGAnimation = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      ease: "easeOut",
+      duration: 1.5,
+    },
+  },
+};

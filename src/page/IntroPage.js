@@ -2,7 +2,12 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
 import WaveAnimation from "../components/WaveAnimation";
-import { descriptionAnimation, pageAnimation } from "../animation";
+import {
+  descriptionAnimation,
+  pageAnimation,
+  SVGAnimation,
+} from "../animation";
+import styles from "../";
 
 const IntroPage = () => {
   return (
@@ -24,9 +29,18 @@ const IntroPage = () => {
               Release.
             </motion.h2>
           </StyledHide>
+          <StyledHide>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              variants={descriptionAnimation}
+            >
+              Learn About Us!
+            </motion.a>
+          </StyledHide>
         </StyledDescription>
 
-        <StyledIntroImages>
+        <StyledIntroImages variants={SVGAnimation}>
           <svg
             width="985"
             height="693"
@@ -34,21 +48,21 @@ const IntroPage = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g id="mindfulness 1" clip-path="url(#clip0)">
+            <g id="mindfulness 1" clipPath="url(#clip0)">
               <path
                 id="wave"
                 opacity="0.2"
                 d="M297.08 46.32C284.96 47.9 271.79 50.56 263.78 61.15C254.31 73.67 255.58 92.7 259.87 108.55C264.16 124.4 270.94 139.85 270.87 156.45C270.68 182.84 252.66 205.24 232.15 217.05C211.64 228.86 188.49 232.67 166.35 239.56C145.701 246.017 125.953 255.066 107.58 266.49C91.99 276.16 76.31 288.8 70.07 307.88C59.84 339.17 78.66 372.38 97.25 398.07C154.25 476.84 226.91 552.42 315.73 560.07C382.08 565.74 448.5 532.18 514.13 544.49C544.28 550.13 572.37 565.15 600.67 578.38C628.97 591.61 658.74 603.38 689.25 601.88C719.76 600.38 751.4 583.08 764.62 551.39C772.43 532.66 773.22 510.94 780.44 491.9C802.56 433.49 871.5 424.01 911.5 380.05C932.5 356.96 944.5 325.25 954.5 293.83C970.65 242.71 982.76 188.83 980.06 134.48C978.88 110.82 974.46 86.25 961.33 67.99C951.78 54.7 938.45 45.88 925.43 37.35C895.79 17.93 863.97 -2.12 829.92 0.189995C810.3 1.52 791.74 10.25 773.02 17.09C737.36 30.09 700.16 36.53 663.15 42.88C602 53.38 539.97 63.88 477.99 58.64C450.62 56.31 424.77 47.01 397.84 43.2C365.09 38.57 329.7 42.07 297.08 46.32Z"
                 fill="#FF96AD"
               />
-              <g id="moon">
+              <Moon>
                 <path
                   id="Vector"
                   opacity="0.5"
                   d="M791 207.97C811.987 207.97 829 190.957 829 169.97C829 148.983 811.987 131.97 791 131.97C770.013 131.97 753 148.983 753 169.97C753 190.957 770.013 207.97 791 207.97Z"
                   fill="#6C63FF"
                 />
-              </g>
+              </Moon>
               <path
                 id="Vector_2"
                 d="M671.33 304.12H323.6L343.47 242.97H354.12L356.25 258.83H631.59L633.01 242.97H645.78L671.33 304.12Z"
@@ -450,7 +464,7 @@ const IntroPage = () => {
                   fill="#252223"
                 />
               </Cloud1>
-              <g id="leafthing2">
+              <LeafThingTwo>
                 <path
                   id="Vector_75"
                   d="M788.73 675.12C788.73 675.12 764.06 591.36 793.36 529.71C805.66 503.84 809.74 474.79 804.06 446.71C801.344 433.378 797.411 420.323 792.31 407.71"
@@ -528,8 +542,8 @@ const IntroPage = () => {
                   d="M737.96 623.28C746.21 629.38 781.2 632.14 781.2 632.14C781.2 632.14 768.32 599.49 760.06 593.39C758.099 591.915 755.865 590.843 753.488 590.235C751.111 589.628 748.637 589.497 746.208 589.85C743.78 590.204 741.446 591.034 739.34 592.294C737.235 593.554 735.399 595.219 733.94 597.191C732.481 599.164 731.427 601.406 730.838 603.788C730.25 606.17 730.139 608.646 730.511 611.071C730.884 613.496 731.733 615.824 733.01 617.919C734.287 620.015 735.966 621.837 737.95 623.28H737.96Z"
                   fill="#FC6681"
                 />
-              </g>
-              <g id="leafthing1">
+              </LeafThingTwo>
+              <LeafThingOne>
                 <path
                   id="Vector_90"
                   d="M206.73 673.12C206.73 673.12 182.06 589.36 211.36 527.71C223.66 501.84 227.74 472.79 222.06 444.71C219.344 431.378 215.411 418.323 210.31 405.71"
@@ -607,7 +621,7 @@ const IntroPage = () => {
                   d="M155.96 621.28C164.21 627.38 199.2 630.14 199.2 630.14C199.2 630.14 186.32 597.49 178.06 591.39C176.099 589.915 173.865 588.843 171.488 588.235C169.111 587.628 166.637 587.497 164.208 587.85C161.78 588.204 159.446 589.034 157.34 590.294C155.235 591.554 153.399 593.219 151.94 595.191C150.481 597.164 149.427 599.406 148.838 601.788C148.25 604.17 148.139 606.646 148.511 609.071C148.884 611.496 149.733 613.824 151.01 615.919C152.287 618.015 153.966 619.837 155.95 621.28H155.96Z"
                   fill="#FC6681"
                 />
-              </g>
+              </LeafThingOne>
             </g>
             <defs>
               <linearGradient
@@ -618,9 +632,9 @@ const IntroPage = () => {
                 y2="259.98"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#808080" stop-opacity="0.25" />
-                <stop offset="0.54" stop-color="#808080" stop-opacity="0.12" />
-                <stop offset="1" stop-color="#808080" stop-opacity="0.1" />
+                <stop stopColor="#808080" stopOpacity="0.25" />
+                <stop offset="0.54" stopColor="#808080" stopOpacity="0.12" />
+                <stop offset="1" stopColor="#808080" stopOpacity="0.1" />
               </linearGradient>
               <clipPath id="clip0">
                 <rect width="985" height="692.97" fill="white" />
@@ -648,9 +662,19 @@ const StyledDescription = styled(motion.div)`
   flex-direction: column;
   justify-content: flex-end;
   padding-left: 5%;
-  padding-bottom: 10rem;
+  padding-bottom: 13rem;
   h2 {
     font-size: 5rem;
+  }
+  a {
+    position: absolute;
+    bottom: 19%;
+    padding: 1rem 3rem;
+    border: 2px solid #005a8d;
+    border-radius: 20px;
+    background: #005a8d;
+    color: white;
+    font-family: "Alata", sans-serif;
   }
 `;
 
@@ -659,7 +683,7 @@ const StyledIntroImages = styled(motion.div)`
   svg {
     position: absolute;
     top: -7%;
-    left: 40%;
+    left: 37%;
     transform: scale(0.85);
   }
 `;
@@ -690,13 +714,13 @@ const Cloud2Animation = keyframes`
     transform: translateX(-5%);
   }
   to {
-    transform: translateX(7%);
+    transform: translateX(10%);
   }
 `;
 
 const Cloud2 = styled.g`
   animation-name: ${Cloud2Animation};
-  animation-duration: 3s;
+  animation-duration: 9s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
@@ -704,40 +728,75 @@ const Cloud2 = styled.g`
 
 const Cloud3Animation = keyframes`
   from {
-    transform: translateX(-5%);
+    transform: translateX(7%);
   }
   to {
-    transform: translateX(7%);
+    transform: translateX(-5);
   }
 `;
 
 const Cloud3 = styled.g`
   animation-name: ${Cloud3Animation};
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
 `;
 
-const leafthing1Animation = keyframes`
+const Leafthing1Animation = keyframes`
 from {
-    transform: rotateZ(0);
+    transform: rotateZ(-5deg);
   }
   to {
-    transform: rotateZ(0);
+    transform: rotateZ(5deg);
   }
 `;
 
-const leafthing1 = styled.g``;
-
-const leafThingOne = styled.g`
-  animation-name: ${leafthing1Animation};
+const LeafThingOne = styled.g`
+  animation-name: ${Leafthing1Animation};
   animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
   transform-origin: bottom;
   transform-box: fill-box;
+`;
+
+const Leafthing2Animation = keyframes`
+from {
+    transform: rotateZ(5deg);
+  }
+  to {
+    transform: rotateZ(-5deg);
+  }
+`;
+
+const LeafThingTwo = styled.g`
+  animation-name: ${Leafthing2Animation};
+  animation-duration: 3.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  transform-origin: bottom;
+  transform-box: fill-box;
+`;
+
+const MoonAnimation = keyframes`
+  from {
+    transform: rotateZ(-20deg);
+  }
+  to {
+    transform: rotateZ(40deg);
+    }
+`;
+
+const Moon = styled.g`
+  animation-name: ${MoonAnimation};
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  transform-origin: top;
 `;
 
 export default IntroPage;

@@ -46,15 +46,15 @@ const Nav = () => {
           <h1>Pulsate</h1>
         </StyledLogoContainer>
         <StyledNavLinks>
-          <li>
+          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a href="">Journal</a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a href="">Work Session</a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a href="">Meditation</a>
-          </li>
+          </motion.li>
         </StyledNavLinks>
       </StyledNav>
       <StyledNavLine

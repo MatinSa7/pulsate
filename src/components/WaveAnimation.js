@@ -28,7 +28,7 @@ const StyledWave = styled(motion.svg)`
   width: 100%;
   position: absolute;
   left: 0;
-  z-index: -10;
+  z-index: -100;
 `;
 
 export default WaveAnimation;
