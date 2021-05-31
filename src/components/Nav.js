@@ -18,6 +18,13 @@ const StyledLogoContainer = styled(motion.div)`
     height: 64px;
     width: 64px;
   }
+  a {
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-top: 0.8rem;
+    color: black;
+    text-decoration: none;
+  }
 `;
 const StyledNavLinks = styled(motion.ul)`
   display: flex;
@@ -41,13 +48,17 @@ const Nav = () => {
   return (
     <>
       <StyledNav initial="hidden" animate="show" variants={fade}>
-        <StyledLogoContainer id="logo">
+        <StyledLogoContainer
+          whileHover={{ scale: 1.02, transition: { duration: 2 } }}
+          whileTap={{ scale: 0.9 }}
+          id="logo"
+        >
           <img src={meditationlogo} alt="" />
-          <h1>Pulsate</h1>
+          <a href="/pulsate">Pulsate</a>
         </StyledLogoContainer>
         <StyledNavLinks>
           <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            <a href="">Journal</a>
+            <a href="/Journal">Journal</a>
           </motion.li>
           <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a href="">Work Session</a>

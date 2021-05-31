@@ -681,8 +681,8 @@ const StyledDescription = styled(motion.div)`
 const StyledIntroImages = styled(motion.div)`
   flex: 1 1 20rem;
   svg {
-    position: absolute;
-    top: -7%;
+    position: absolute; 
+     top: -7%;
     left: 37%;
     transform: scale(0.85);
   }
