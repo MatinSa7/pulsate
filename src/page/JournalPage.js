@@ -31,11 +31,11 @@ const StyledJournalNav = styled(motion.div)`
   }
   .trash-can {
     margin-top: 1rem;
-    margin-left: 2rem;
+    margin-left: 3rem;
   }
   .check-mark {
     margin-top: 1rem;
-    margin-left: 2rem;
+    margin-left: 3rem;
   }
   .background-color {
     padding-left: 40rem;
