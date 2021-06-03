@@ -9,15 +9,56 @@ const JournalPage = () => {
   return (
     <div className="pageContainer">
       <StyledJournalNav>
-        <FontAwesomeIcon size="2x" icon={faBars} />
         <h1>My Journal</h1>
         <FontAwesomeIcon className="check-mark" icon={faCheck} />
         <FontAwesomeIcon className="trash-can" icon={faTrashAlt} />
-        <h2 className="background-color">background-color</h2>
+        <StyledBars>
+          <FontAwesomeIcon className="bars" size="2x" icon={faBars} />
+        </StyledBars>
       </StyledJournalNav>
+      <StyledTextArea>
+        <textarea name="" id="" cols="180" rows="10"></textarea>
+        <StyledAddButton>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Submit Journal!
+          </motion.button>
+        </StyledAddButton>
+      </StyledTextArea>
     </div>
   );
 };
+
+const StyledAddButton = styled(motion.div)`
+  button {
+    font-family: "Alata", sans-serif;
+    color: white;
+    margin-top: 1rem;
+    padding: 1rem 4rem;
+    border-radius: 20px;
+    border: none;
+    background: #005a8d;
+  }
+`;
+
+const StyledTextArea = styled(motion.div)`
+  padding-top: 1rem;
+  width: 90%;
+  margin: auto;
+  textarea {
+    font-family: "Alata", sans-serif;
+    width: 100%;
+  }
+`;
+
+const StyledBars = styled(motion.div)`
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 78%;
+`;
 
 const StyledJournalNav = styled(motion.div)`
   align-items: center;
@@ -26,19 +67,22 @@ const StyledJournalNav = styled(motion.div)`
   margin: auto;
   margin-top: 2rem;
   h1 {
-    padding-left: 2rem;
     font-size: 3rem;
   }
   .trash-can {
+    cursor: pointer;
     margin-top: 1rem;
-    margin-left: 3rem;
   }
   .check-mark {
+    margin-left: 1rem;
+    cursor: pointer;
     margin-top: 1rem;
-    margin-left: 3rem;
+    margin-right: 1rem;
   }
   .background-color {
-    padding-left: 40rem;
+  }
+  .bars {
+    cursor: pointer;
   }
 `;
 
