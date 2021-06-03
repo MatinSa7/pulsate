@@ -48,8 +48,12 @@ const StyledTextArea = styled(motion.div)`
   width: 90%;
   margin: auto;
   textarea {
+    border: none;
+    border-radius: 10px;
     font-family: "Alata", sans-serif;
     width: 100%;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1),
+      0px 20px 20px rgba(0, 0, 0, 0.1);
   }
 `;
 
