@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTrashAlt, faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +6,43 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const JournalPage = () => {
+  const useJournal = () => {
+    //use State for entries in text field
+    const [entries, setEntries] = useState([]);
+
+    //stringifying the values entered and parsing them
+    const getEntriesFromStorage = () =>
+      JSON.parse(window.localStorage.getItem("journalEntries"));
+
+    //Setting them
+    const setEntriesToStorage = (items) =>
+      window.localStorage.setItem("journalEntries", JSON.stringify(items));
+
+    //Checking for Entries
+    useEffect(() => {
+      const entriesFromStorage = getEntriesFromStorage();
+      if (entriesFromStorage) {
+        setEntries(entriesFromStorage);
+      }
+    }, []);
+
+    const storeEntry = (entry) => {
+      const newEntries = [entry, ...entries];
+      setEntries(newEntries);
+      setEntriesToStorage(newEntries);
+    };
+
+    const removeEntry = (index) => {
+      const newEntries = [
+        ...entries.slice(0, index),
+        ...entries.slice(index + 1),
+      ];
+      setEntries(newEntries);
+      setEntriesToStorage(newEntries);
+    };
+    return [entries, storeEntry, removeEntry];
+  };
+
   return (
     <div className="pageContainer">
       <StyledJournalNav>
