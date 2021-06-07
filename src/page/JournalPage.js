@@ -43,6 +43,27 @@ const JournalPage = () => {
     return [entries, storeEntry, removeEntry];
   };
 
+  const EntryList = ({ list, deleteEntry }) => {
+    const handleDeleteClick = (index) => (e) => {
+      deleteEntry(index);
+    };
+    return (
+      <div className="Entries">
+        {list &&
+          list.map((item, i) => {
+            const itemDate = "time";
+            return (
+              <div className="Entry-Body">
+                <h4 className="Entry-Title">{itemDate}</h4>
+                <p className="Entry-Text">{item.message}</p>
+                <button onClick={handleDeleteClick(i)}>Delete</button>
+              </div>
+            );
+          })}
+      </div>
+    );
+  };
+
   return (
     <div className="pageContainer">
       <StyledJournalNav>
