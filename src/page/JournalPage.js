@@ -64,6 +64,26 @@ const JournalPage = () => {
     );
   };
 
+  const Entry = ({ addEntry }) => {
+    const [message, setMessage] = useState("");
+    const [flag, setFlag] = useState("");
+    const fieldRef = useRef();
+    const handleOnChange = (e) => setMessage(e.target.value);
+    const handleFlagChange = (e) => setFlag(e.target.value);
+    const handleOnSubmit = (e) => {
+      e.preventDefault();
+      if (message && message.trim().length > 0) {
+        addEntry({
+          message,
+          flag,
+          date: Date.now,
+        });
+        setMessage("");
+        setFlag("");
+      }
+    };
+  };
+
   return (
     <div className="pageContainer">
       <StyledJournalNav>
