@@ -6,83 +6,16 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const JournalPage = () => {
-  const useJournal = () => {
-    //use State for entries in text field
-    const [entries, setEntries] = useState([]);
+  const [input, setInput] = useState(localStorage.getItem("journalEntry"));
 
-    //stringifying the values entered and parsing them
-    const getEntriesFromStorage = () =>
-      JSON.parse(window.localStorage.getItem("journalEntries"));
-
-    //Setting them
-    const setEntriesToStorage = (items) =>
-      window.localStorage.setItem("journalEntries", JSON.stringify(items));
-
-    //Checking for Entries
-    useEffect(() => {
-      const entriesFromStorage = getEntriesFromStorage();
-      if (entriesFromStorage) {
-        setEntries(entriesFromStorage);
-      }
-    }, []);
-
-    const storeEntry = (entry) => {
-      const newEntries = [entry, ...entries];
-      setEntries(newEntries);
-      setEntriesToStorage(newEntries);
-    };
-
-    const removeEntry = (index) => {
-      const newEntries = [
-        ...entries.slice(0, index),
-        ...entries.slice(index + 1),
-      ];
-      setEntries(newEntries);
-      setEntriesToStorage(newEntries);
-    };
-    return [entries, storeEntry, removeEntry];
+  const onChange = (event) => {
+    setInput(event.target.value);
   };
 
-  const EntryList = ({ list, deleteEntry }) => {
-    const handleDeleteClick = (index) => (e) => {
-      deleteEntry(index);
-    };
-    return (
-      <div className="Entries">
-        {list &&
-          list.map((item, i) => {
-            const itemDate = "time";
-            return (
-              <div className="Entry-Body">
-                <h4 className="Entry-Title">{itemDate}</h4>
-                <p className="Entry-Text">{item.message}</p>
-                <button onClick={handleDeleteClick(i)}>Delete</button>
-              </div>
-            );
-          })}
-      </div>
-    );
-  };
-
-  const Entry = ({ addEntry }) => {
-    const [message, setMessage] = useState("");
-    const [flag, setFlag] = useState("");
-    const fieldRef = useRef();
-    const handleOnChange = (e) => setMessage(e.target.value);
-    const handleFlagChange = (e) => setFlag(e.target.value);
-    const handleOnSubmit = (e) => {
-      e.preventDefault();
-      if (message && message.trim().length > 0) {
-        addEntry({
-          message,
-          flag,
-          date: Date.now,
-        });
-        setMessage("");
-        setFlag("");
-      }
-    };
-  };
+  useEffect(() => {
+    console.log("render");
+    localStorage.setItem("journalEntry", input);
+  }, [input]);
 
   return (
     <div className="pageContainer">
@@ -95,7 +28,14 @@ const JournalPage = () => {
         </StyledBars>
       </StyledJournalNav>
       <StyledTextArea>
-        <textarea name="" id="" cols="180" rows="10"></textarea>
+        <textarea
+          name=""
+          id=""
+          cols="180"
+          rows="10"
+          onChange={onChange}
+        ></textarea>
+        <p>{input}</p>
         <StyledAddButton>
           <motion.button
             whileHover={{ scale: 1.05 }}
