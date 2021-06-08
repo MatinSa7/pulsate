@@ -17,6 +17,10 @@ const JournalPage = () => {
     localStorage.setItem("journalEntry", input);
   }, [input]);
 
+  const onSubmit = () => {
+    setInput("");
+  };
+
   return (
     <div className="pageContainer">
       <StyledJournalNav>
@@ -27,24 +31,27 @@ const JournalPage = () => {
           <FontAwesomeIcon className="bars" size="2x" icon={faBars} />
         </StyledBars>
       </StyledJournalNav>
-      <StyledTextArea>
-        <textarea
-          name=""
-          id=""
-          cols="180"
-          rows="10"
-          onChange={onChange}
-        ></textarea>
-        <p>{input}</p>
-        <StyledAddButton>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Submit Journal!
-          </motion.button>
-        </StyledAddButton>
-      </StyledTextArea>
+      <form className="journalEntries">
+        <StyledTextArea>
+          <textarea
+            name=""
+            id=""
+            cols="180"
+            rows="10"
+            onChange={onChange}
+          ></textarea>
+          <p>{input}</p>
+          <StyledAddButton>
+            <motion.button
+              onClick={onSubmit}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Submit Journal!
+            </motion.button>
+          </StyledAddButton>
+        </StyledTextArea>
+      </form>
     </div>
   );
 };
