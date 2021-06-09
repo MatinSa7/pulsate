@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTrashAlt, faCheck } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import JournalEntry from "../components/JournalEntry";
 
 const JournalPage = () => {
   var date = new Date();
@@ -19,11 +20,9 @@ const JournalPage = () => {
   useEffect(() => {}, [input]);
 
   const onSubmit = () => {
+    const currentDateFormat = `${date.getHours()}${date.getMinutes()}`;
     console.log("render");
-    localStorage.setItem(
-      `journalEntry${date.getHours()}${date.getMinutes()}`,
-      input
-    );
+    localStorage.setItem(`journalEntry${currentDateFormat}`, input);
     setInput("");
   };
 
@@ -56,6 +55,7 @@ const JournalPage = () => {
           </StyledAddButton>
         </StyledTextArea>
       </form>
+      <JournalEntry />
     </div>
   );
 };
