@@ -6,18 +6,24 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const JournalPage = () => {
-  const [input, setInput] = useState(localStorage.getItem("journalEntry"));
+  var date = new Date();
+  console.log(date.getHours());
+  console.log(date.getMinutes());
+  const data = [];
+  const [input, setInput] = useState("");
 
   const onChange = (event) => {
     setInput(event.target.value);
   };
 
-  useEffect(() => {
-    console.log("render");
-    localStorage.setItem("journalEntry", input);
-  }, [input]);
+  useEffect(() => {}, [input]);
 
   const onSubmit = () => {
+    console.log("render");
+    localStorage.setItem(
+      `journalEntry${date.getHours()}${date.getMinutes()}`,
+      input
+    );
     setInput("");
   };
 
@@ -25,8 +31,6 @@ const JournalPage = () => {
     <div className="pageContainer">
       <StyledJournalNav>
         <h1>My Journal</h1>
-        <FontAwesomeIcon className="check-mark" icon={faCheck} />
-        <FontAwesomeIcon className="trash-can" icon={faTrashAlt} />
         <StyledBars>
           <FontAwesomeIcon className="bars" size="2x" icon={faBars} />
         </StyledBars>
@@ -86,7 +90,7 @@ const StyledBars = styled(motion.div)`
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  width: 78%;
+  width: 82%;
 `;
 
 const StyledJournalNav = styled(motion.div)`
