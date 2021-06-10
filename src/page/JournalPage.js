@@ -17,12 +17,20 @@ const JournalPage = () => {
     setInput(event.target.value);
   };
 
+  Object.keys(localStorage).map((key, index) => {
+    console.log(key);
+  });
+
   useEffect(() => {}, [input]);
+
+  const currentDateFormat = `${date.getHours()}${date.getMinutes()}`;
 
   const onSubmit = () => {
     const currentDateFormat = `${date.getHours()}${date.getMinutes()}`;
     console.log("render");
-    localStorage.setItem(`journalEntry${currentDateFormat}`, input);
+    const currentJournalItemName = `journalEntry${currentDateFormat}`;
+    localStorage.setItem(currentJournalItemName, input);
+    data.push(currentJournalItemName);
     setInput("");
   };
 
@@ -55,7 +63,10 @@ const JournalPage = () => {
           </StyledAddButton>
         </StyledTextArea>
       </form>
-      <JournalEntry />
+      {Object.keys(localStorage).map((key, index) => (
+        <JournalEntry date={key} title="bob" />
+      ))}
+      <JournalEntry date={currentDateFormat} title="john" />
     </div>
   );
 };

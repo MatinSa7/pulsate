@@ -2,11 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-const JournalEntry = () => {
+const JournalEntry = ({date, title }) => {
   return (
     <div className="card-container">
-      <h2>Date</h2>
-      <p>blah blah</p>
+      <h2>{date}</h2>
+      <p>{title}</p>
     </div>
   );
 };
