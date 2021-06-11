@@ -11,6 +11,7 @@ const JournalPage = () => {
   console.log(date.getHours());
   console.log(date.getMinutes());
   const data = [];
+  const [libraryStatus, setLibraryStatus] = useState(false);
   const [input, setInput] = useState("");
 
   const onChange = (event) => {
@@ -18,10 +19,12 @@ const JournalPage = () => {
   };
 
   Object.keys(localStorage).map((key, index) => {
-    console.log(key);
+    //console.log(key);
   });
 
-  useEffect(() => {}, [input]);
+  useEffect(() => {
+    console.log(libraryStatus);
+  }, [input]);
 
   const currentDateFormat = `${date.getHours()}${date.getMinutes()}`;
 
@@ -39,7 +42,12 @@ const JournalPage = () => {
       <StyledJournalNav>
         <h1>My Journal</h1>
         <StyledBars>
-          <FontAwesomeIcon className="bars" size="2x" icon={faBars} />
+          <FontAwesomeIcon
+            className="bars"
+            size="2x"
+            icon={faBars}
+            onClick={() => setLibraryStatus(!libraryStatus)}
+          />
         </StyledBars>
       </StyledJournalNav>
       <form className="journalEntries">
@@ -63,10 +71,6 @@ const JournalPage = () => {
           </StyledAddButton>
         </StyledTextArea>
       </form>
-      {Object.keys(localStorage).map((key, index) => (
-        <JournalEntry date={key} title="bob" />
-      ))}
-      <JournalEntry date={currentDateFormat} title="john" />
     </div>
   );
 };
