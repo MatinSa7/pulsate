@@ -5,6 +5,7 @@ import { faBars, faTrashAlt, faCheck } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import JournalEntry from "../components/JournalEntry";
+import JournalLibrary from "../components/JournalLibrary";
 
 const JournalPage = () => {
   var date = new Date();
@@ -70,6 +71,7 @@ const JournalPage = () => {
             </motion.button>
           </StyledAddButton>
         </StyledTextArea>
+        <JournalLibrary libraryStatus={libraryStatus} />
       </form>
     </div>
   );
