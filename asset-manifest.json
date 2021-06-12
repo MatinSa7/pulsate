@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/pulsate/static/js/main.1068577d.chunk.js",
-    "main.js.map": "/pulsate/static/js/main.1068577d.chunk.js.map",
-    "runtime-main.js": "/pulsate/static/js/runtime-main.18ea6549.js",
-    "runtime-main.js.map": "/pulsate/static/js/runtime-main.18ea6549.js.map",
-    "static/js/2.967ab7d7.chunk.js": "/pulsate/static/js/2.967ab7d7.chunk.js",
-    "static/js/2.967ab7d7.chunk.js.map": "/pulsate/static/js/2.967ab7d7.chunk.js.map",
-    "static/js/3.58c4aeac.chunk.js": "/pulsate/static/js/3.58c4aeac.chunk.js",
-    "static/js/3.58c4aeac.chunk.js.map": "/pulsate/static/js/3.58c4aeac.chunk.js.map",
+    "main.js": "/pulsate/static/js/main.cb9393d2.chunk.js",
+    "main.js.map": "/pulsate/static/js/main.cb9393d2.chunk.js.map",
+    "runtime-main.js": "/pulsate/static/js/runtime-main.bc40bcb3.js",
+    "runtime-main.js.map": "/pulsate/static/js/runtime-main.bc40bcb3.js.map",
+    "static/js/2.9992230d.chunk.js": "/pulsate/static/js/2.9992230d.chunk.js",
+    "static/js/2.9992230d.chunk.js.map": "/pulsate/static/js/2.9992230d.chunk.js.map",
+    "static/js/3.731121d0.chunk.js": "/pulsate/static/js/3.731121d0.chunk.js",
+    "static/js/3.731121d0.chunk.js.map": "/pulsate/static/js/3.731121d0.chunk.js.map",
     "index.html": "/pulsate/index.html",
-    "static/js/2.967ab7d7.chunk.js.LICENSE.txt": "/pulsate/static/js/2.967ab7d7.chunk.js.LICENSE.txt",
+    "static/js/2.9992230d.chunk.js.LICENSE.txt": "/pulsate/static/js/2.9992230d.chunk.js.LICENSE.txt",
     "static/media/meditationlogo.73017a1f.svg": "/pulsate/static/media/meditationlogo.73017a1f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.18ea6549.js",
-    "static/js/2.967ab7d7.chunk.js",
-    "static/js/main.1068577d.chunk.js"
+    "static/js/runtime-main.bc40bcb3.js",
+    "static/js/2.9992230d.chunk.js",
+    "static/js/main.cb9393d2.chunk.js"
   ]
 }
