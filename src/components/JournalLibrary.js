@@ -39,6 +39,11 @@ const StyledLibraryWrapper = styled(motion.div)`
     opacity: 1;
     background: white;
   }
+
+  h2 {
+    width: 90%;
+    margin: auto;
+  }
 `;
 
 export default JournalLibrary;
