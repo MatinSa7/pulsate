@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const WorksessionPage = () => {
-  const [minutes, setMinutes] = useState(25);
-  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(2);
   const [message, setMessage] = useState(false);
   const [pomodoroActivate, setPomodoroActivate] = useState(false);
 
@@ -43,18 +43,22 @@ const WorksessionPage = () => {
 
   return (
     <StyledWorksessionPageContainer>
-      <StyledTimer>
-        {minutes} : {seconds}
-      </StyledTimer>
       <StyledAlert>
         {message && <div>Break time! New session starts in:</div>}
       </StyledAlert>
-      <StyledButton onClick={pomodoroActivater}>balls</StyledButton>
+      <StyledTimer>
+        {timerMinutes} : {timerSeconds}
+      </StyledTimer>
+
+      <StyledButton onClick={pomodoroActivater}>
+        Start Pomodoro Session!
+      </StyledButton>
     </StyledWorksessionPageContainer>
   );
 };
 
 const StyledWorksessionPageContainer = styled(motion.div)`
+  position: relative;
   width: 100%;
   height: 70vh;
   display: flex;
@@ -63,10 +67,24 @@ const StyledWorksessionPageContainer = styled(motion.div)`
   justify-content: center;
 `;
 
-const StyledTimer = styled(motion.div)``;
+const StyledTimer = styled(motion.div)`
+  font-size: 6rem;
+`;
 
-const StyledAlert = styled(motion.div)``;
+const StyledAlert = styled(motion.div)`
+  font-size: 3rem;
+`;
 
-const StyledButton = styled(motion.button)``;
+const StyledButton = styled(motion.button)`
+  position: absolute;
+  bottom: 10%;
+  padding: 1.5rem 4rem;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Alata", sans-serif;
+`;
 
 export default WorksessionPage;
