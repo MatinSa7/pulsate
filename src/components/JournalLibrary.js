@@ -25,7 +25,7 @@ const StyledLibraryWrapper = styled(motion.div)`
     position: fixed;
     top: 0;
     left: 0;
-    width: 20rem;
+    width: 25rem;
     height: 100%;
     box-shadow: 2px 2px 50px rgb(201, 201, 201);
     overflow: scroll;

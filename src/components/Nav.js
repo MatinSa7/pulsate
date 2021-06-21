@@ -61,7 +61,7 @@ const Nav = () => {
             <a href="/Journal">Journal</a>
           </motion.li>
           <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            <a href="">Work Session</a>
+            <a href="/Worksession">Work Session</a>
           </motion.li>
           <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a href="">Meditation</a>

@@ -5,6 +5,7 @@ import IntroPage from "./page/IntroPage";
 import { Switch, Route, useLocation } from "react-router-dom";
 import JournalPage from "./page/JournalPage";
 import JournalLibrary from "./components/JournalLibrary";
+import WorksessionPage from "./page/WorksessionPage";
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/Journal" exact>
           <JournalPage />
+        </Route>
+        <Route path="/Worksession" exact>
+          <WorksessionPage />
         </Route>
       </Switch>
     </div>
