@@ -667,6 +667,7 @@ const StyledDescription = styled(motion.div)`
     font-size: 5rem;
   }
   a {
+    cursor: pointer;
     position: absolute;
     bottom: 19%;
     padding: 1rem 3rem;

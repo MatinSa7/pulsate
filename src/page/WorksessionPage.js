@@ -3,14 +3,25 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const WorksessionPage = () => {
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(2);
+  const [minutes, setMinutes] = useState(25);
+  const [seconds, setSeconds] = useState(0);
   const [message, setMessage] = useState(false);
   const [pomodoroActivate, setPomodoroActivate] = useState(false);
+  const [buttonText, setButtonText] = useState("Start Pomodoro Timer!");
 
   const pomodoroActivater = () => {
     setPomodoroActivate(!pomodoroActivate);
     console.log(pomodoroActivate);
+  };
+
+  const buttonTextHandler = () => {
+    if (pomodoroActivate === true) {
+      setButtonText("Start Pomodoro Timer!");
+      console.log("hi");
+    } else {
+      setButtonText("Pause Pomodoro Timer!");
+      console.log("hi");
+    }
   };
 
   useEffect(() => {
@@ -50,8 +61,13 @@ const WorksessionPage = () => {
         {timerMinutes} : {timerSeconds}
       </StyledTimer>
 
-      <StyledButton onClick={pomodoroActivater}>
-        Start Pomodoro Session!
+      <StyledButton
+        onClick={() => {
+          pomodoroActivater();
+          buttonTextHandler();
+        }}
+      >
+        {buttonText}
       </StyledButton>
     </StyledWorksessionPageContainer>
   );
