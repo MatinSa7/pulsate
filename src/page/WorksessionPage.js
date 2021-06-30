@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { descriptionAnimation } from "../animation";
 
 const WorksessionPage = () => {
   const [minutes, setMinutes] = useState(25);
@@ -17,15 +18,12 @@ const WorksessionPage = () => {
   const buttonTextHandler = () => {
     if (pomodoroActivate === true) {
       setButtonText("Start Pomodoro Timer!");
-      console.log("hi");
     } else {
       setButtonText("Pause Pomodoro Timer!");
-      console.log("hi");
     }
   };
 
   useEffect(() => {
-    console.log("ballsack");
     if (pomodoroActivate === true) {
       let interval = setInterval(() => {
         clearInterval(interval);
@@ -53,7 +51,11 @@ const WorksessionPage = () => {
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
   return (
-    <StyledWorksessionPageContainer>
+    <StyledWorksessionPageContainer
+      initial="hidden"
+      animate="show"
+      variants={descriptionAnimation}
+    >
       <StyledAlert>
         {message && <div>Break time! New session starts in:</div>}
       </StyledAlert>
@@ -62,6 +64,8 @@ const WorksessionPage = () => {
       </StyledTimer>
 
       <StyledButton
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
         onClick={() => {
           pomodoroActivater();
           buttonTextHandler();

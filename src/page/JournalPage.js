@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import JournalEntry from "../components/JournalEntry";
 import JournalLibrary from "../components/JournalLibrary";
+import { descriptionAnimation } from "../animation";
 
 const JournalPage = () => {
   var date = new Date();
@@ -39,7 +40,12 @@ const JournalPage = () => {
   };
 
   return (
-    <div className="pageContainer">
+    <motion.div
+      className="pageContainer"
+      initial="hidden"
+      animate="show"
+      variants={descriptionAnimation}
+    >
       <StyledJournalNav>
         <h1>My Journal</h1>
         <StyledBars>
@@ -73,7 +79,7 @@ const JournalPage = () => {
         </StyledTextArea>
         <JournalLibrary libraryStatus={libraryStatus} />
       </form>
-    </div>
+    </motion.div>
   );
 };
 
@@ -98,6 +104,7 @@ const StyledTextArea = styled(motion.div)`
     border-radius: 10px;
     font-family: "Alata", sans-serif;
     width: 100%;
+    outline: none;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1),
       0px 20px 20px rgba(0, 0, 0, 0.1);
   }

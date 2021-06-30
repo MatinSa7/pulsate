@@ -6,6 +6,7 @@ import { Switch, Route, useLocation } from "react-router-dom";
 import JournalPage from "./page/JournalPage";
 import JournalLibrary from "./components/JournalLibrary";
 import WorksessionPage from "./page/WorksessionPage";
+import MeditationPage from "./page/MeditationPage";
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path="/Worksession" exact>
           <WorksessionPage />
+        </Route>
+        <Route path="/Meditation" exact>
+          <MeditationPage />
         </Route>
       </Switch>
     </div>
