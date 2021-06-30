@@ -10,6 +10,14 @@ const StyledNav = styled(motion.div)`
   width: 90%;
   margin: auto;
   min-height: 15vh;
+  @media screen and (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    li {
+      padding-top: 0.7rem;
+    }
+  }
 `;
 const StyledLogoContainer = styled(motion.div)`
   display: flex;
@@ -24,6 +32,9 @@ const StyledLogoContainer = styled(motion.div)`
     padding-top: 0.8rem;
     color: black;
     text-decoration: none;
+  }
+  @media screen and (max-width: 700px) {
+    padding-top: 1rem;
   }
 `;
 const StyledNavLinks = styled(motion.ul)`

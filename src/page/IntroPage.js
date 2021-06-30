@@ -677,15 +677,32 @@ const StyledDescription = styled(motion.div)`
     color: white;
     font-family: "Alata", sans-serif;
   }
+  @media screen and (max-width: 978px) {
+    h2 {
+      font-size: 4rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 3rem;
+    }
+  }
 `;
 
 const StyledIntroImages = styled(motion.div)`
   flex: 1 1 20rem;
   svg {
-    position: absolute; 
-     top: -7%;
+    position: absolute;
+    top: -7%;
     left: 37%;
     transform: scale(0.85);
+  }
+  @media screen and (max-width: 1437px) {
+    svg {
+      width: 60vw;
+    }
+  }
+  @media screen and (max-width: 768px) {
   }
 `;
 
