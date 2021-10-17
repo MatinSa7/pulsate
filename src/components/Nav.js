@@ -67,6 +67,7 @@ const Nav = () => {
           <img src={meditationlogo} alt="" />
           <a href="/pulsate">Pulsate</a>
         </StyledLogoContainer>
+        {/*
         <StyledNavLinks>
           <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <a href="/Journal">Journal</a>
@@ -78,6 +79,7 @@ const Nav = () => {
             <a href="/Meditation">Meditation</a>
           </motion.li>
         </StyledNavLinks>
+        */}
       </StyledNav>
       <StyledNavLine
         transition={{ duration: 1 }}
